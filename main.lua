@@ -19,6 +19,6 @@ print([[
 =======================================================================
 
             Você empunha a sua espada e se prepara para lutar.
-                        É hora da batalha!
+                         É hora da batalha!
                         
 ]])
