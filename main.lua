@@ -1,5 +1,6 @@
 -- Dependencias
-local player = require("Definitions.player")
+local player = require("Lua_Projects.Simulador_de_batalha.Definitions.player")
+local medusa = require("Lua_Projects.Simulador_de_batalha.Definitions.medusa")
 
 -- Habilita UTF-8 no terminal e limpa
 os.execute("chcp 65001")  
@@ -25,3 +26,5 @@ print([[
                          É hora da batalha!
                         
 ]])
+
+local boss = medusa
