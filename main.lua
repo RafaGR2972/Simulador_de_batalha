@@ -1,5 +1,5 @@
 -- Dependencias
-local player = require("Lua_Projects.Simulador_de_batalha.Definitions.player")
+local perseu = require("Lua_Projects.Simulador_de_batalha.Definitions.perseu")
 local medusa = require("Lua_Projects.Simulador_de_batalha.Definitions.medusa")
 
 -- Habilita UTF-8 no terminal e limpa
@@ -27,4 +27,5 @@ print([[
                         
 ]])
 
-local boss = medusa
+local monster = medusa
+local hero = perseu
