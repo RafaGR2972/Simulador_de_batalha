@@ -1,3 +1,6 @@
+-- Dependencias
+local player = require("Definitions.player")
+
 -- Habilita UTF-8 no terminal e limpa
 os.execute("chcp 65001")  
 os.execute("cls")
