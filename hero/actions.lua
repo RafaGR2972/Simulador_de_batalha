@@ -41,11 +41,15 @@ function actions.build()
             local rawDamage = heroData.attack - math.random() * creatureData.defense
             local damage = math.max(1, math.ceil(rawDamage))
 
-            -- 3. Apresentar resultado 
+          
             if success then
-                print(string.format("Você atacou a criatura e deu %d pontos de dano", damage))
-                -- 4. Aplicar o dano em caso de sucesso
+                -- 3. Aplicar o dano em caso de sucesso
                 creatureData.health = creatureData.health - damage
+                print(string.format("Você atacou a criatura e deu %d pontos de dano", damage))
+                
+                -- 4. Apresentar resultado 
+                 -- Calculate health rate
+                local healthRate = math.floor((creature.health / creature.maxHealth) * 10)
             else
                 print("Você tentou atacar, mas errou.")
             end
