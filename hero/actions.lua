@@ -1,3 +1,5 @@
+local utils = require "Lua_Projects.Simulador_de_batalha.utils"
+
 local actions = {}
 -- Reset list
 actions.list = {}
@@ -45,11 +47,11 @@ function actions.build()
             if success then
                 -- 3. Aplicar o dano em caso de sucesso
                 creatureData.health = creatureData.health - damage
-                print(string.format("Você atacou a criatura e deu %d pontos de dano", damage))
-                
+
                 -- 4. Apresentar resultado 
-                 -- Calculate health rate
-                local healthRate = math.floor((creature.health / creature.maxHealth) * 10)
+                print(string.format("Você atacou a criatura e deu %d pontos de dano", damage))
+                local healthRate = math.floor((creatureData.health / creatureData.maxHealth) * 10)
+                print(string.format("%s: %s", creatureData.name, utils.getProgressBar(healthRate)))
             else
                 print("Você tentou atacar, mas errou.")
             end
