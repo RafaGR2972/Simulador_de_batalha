@@ -7,31 +7,9 @@ actions.list = {}
 ---
 function actions.build()
     actions.list = {}
-
-    -- Usar um item dado pelos deuses
-    local getItem = {
-        description = "Usar item dado pelos deuses.",
-        requirement = function (heroData, creatureData)
-            -- Escolha do item
-            print("Qual item vai usar? Digite 1 para elmo, 2 para sandálias aladas ou 3 para escudo: ")
-            local item = tonumber(io.read())
-            return heroData.item[item]
-        end,
-        execute = function (heroData, creatureData)
-            -- Efeito do item escolhido
-            if heroData.item[1] then
-                heroData.invisibility = heroData.invisibility + 5
-            elseif heroData.item[2] then
-                heroData.speed = heroData.speed + 2
-            elseif heroData.item[3] then
-                heroData.defense = heroData.defense + 2
-            end               
-        end
-    }
-
     -- Atacar com espada
     local swordAttack = {
-        description = "Atacar com espada.",
+        description = "2. Atacar com espada.",
         requirement = nil,
         execute = function (heroData, creatureData)
             -- 1. Definir chance de sucesso
@@ -53,8 +31,30 @@ function actions.build()
         end
     }
 
+    -- Usar um item dado pelos deuses
+    local getItem = {
+        description = "1. Usar item dado pelos deuses.",
+        requirement = nil,--function (heroData, creatureData) 
+            -- Escolha do item
+            --print("Qual item vai usar? Digite 1 para elmo, 2 para sandálias aladas ou 3 para escudo: ")
+            ---local item = io.read("*n")
+            --return heroData.item[item]
+        --end,
+        execute = function (heroData, creatureData)
+            -- Efeito do item escolhido
+            if heroData.item[1] then
+                heroData.invisibility = heroData.invisibility + 5
+            elseif heroData.item[2] then
+                heroData.speed = heroData.speed + 2
+            elseif heroData.item[3] then
+                heroData.defense = heroData.defense + 2
+            end               
+        end
+    }
+
     -- Populate lista
-    actions.list[#actions.list +1 ] = swordAttack
+    actions.list[#actions.list + 1 ] = swordAttack
+    actions.list[#actions.list + 1 ] = getItem
 end
 
 

@@ -17,9 +17,19 @@ local creature = medusa
 -- Apresenta o monstro
 utils.printCreature(creature)
 
+-- Ações
+heroActions.build()
+
 -- Loop da batalha
 while true do
     -- Mostrar ações para o jogador
+    print("O que deseja fazer?: ")
+    local validHeroActions = heroActions.getValidActions(hero, creature)
+    for index, action in pairs(validHeroActions) do
+        print(string.format("%d: %s", index, action.description))
+    end
+    local chosenIndex = utils.ask()
+    print("Chosen Index:" .. chosenIndex)
     -- Simular o turno do jogador
     -- Ponto de saida: a criatura ficou sem vida
     if creature.health <= 0 then
