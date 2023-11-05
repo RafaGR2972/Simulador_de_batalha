@@ -23,6 +23,7 @@ heroActions.build()
 -- Loop da batalha
 while true do
     -- Mostrar ações para o jogador
+    print()
     print("O que deseja fazer?: ")
     local validHeroActions = heroActions.getValidActions(hero, creature)
     for index, action in pairs(validHeroActions) do
@@ -30,7 +31,16 @@ while true do
     end
     local chosenIndex = utils.ask()
     print("Chosen Index:" .. chosenIndex)
+    local chosenAction = validHeroActions[chosenIndex]
+    local isActionValid = chosenAction ~= nil
+
     -- Simular o turno do jogador
+    if isActionValid then
+        chosenAction.execute(hero, creature)
+    else
+        print("A sua opção não é válida. Perdeu a sua vez.")
+    end
+    
     -- Ponto de saida: a criatura ficou sem vida
     if creature.health <= 0 then
         break
