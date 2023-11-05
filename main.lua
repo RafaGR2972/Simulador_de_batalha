@@ -2,6 +2,7 @@
 local perseu = require("Lua_Projects.Simulador_de_batalha.hero.perseu")
 local medusa = require("Lua_Projects.Simulador_de_batalha.creature.medusa")
 local utils = require("Lua_Projects.Simulador_de_batalha.utils")
+local heroActions = require("Lua_Projects.Simulador_de_batalha.hero.actions")
 
 -- Habilita UTF-8 no terminal e limpa
 utils.enableUtf8()
