@@ -8,5 +8,7 @@ perseu.attack = 4
 perseu.defense = 2
 perseu.speed = 5
 perseu.invisibility = 0
+perseu.item = {"Elmo", "Escudo", "Espada", "Sandálias aladas"}
 
 return perseu
+

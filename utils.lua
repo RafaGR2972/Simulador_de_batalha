@@ -62,7 +62,6 @@ function utils.printCreature(creature)
     print("|    Defesa:           " .. utils.getProgressBar(creature.defense))
     print("|    Vida:             " .. utils.getProgressBar(healthRate))
     print("|    Velocidade:       " .. utils.getProgressBar(creature.speed))
-    --print("|    Invisibilidade:   " .. utils.getProgressBar(creature.invisibility))
     print("|")
 end
 
