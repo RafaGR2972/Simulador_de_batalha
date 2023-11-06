@@ -35,7 +35,7 @@ while true do
         print(string.format("%d: %s", index, action.description))
     end
     local chosenIndex = utils.ask()
-    print("Chosen Index:" .. chosenIndex)
+    print("Escolheu a opção:" .. chosenIndex)
     local chosenAction = validHeroActions[chosenIndex]
     local isActionValid = chosenAction ~= nil
 
@@ -55,8 +55,30 @@ while true do
     local validCreatureActions = creatureActions.getValidActions(hero, creature)
     local creatureAction = validCreatureActions[math.random(#validCreatureActions)]
     creatureAction.execute(hero, creature)
+
     -- Ponto de saida: o jogador ficou sem vida
     if hero.health <= 0 then
         break
     end
+end
+
+-- Processar condições de vitória e derrota
+if hero.health <=0 then
+    print()
+    print("---------------------------------------------------------")
+    print()
+    print(string.format("%s não coseguiu derrotar %s.", hero.name, creature.name))
+    print("Talvez na próxima vez os deuses estejam do seu lado...")
+    print()
+    print("---------------------------------------------------------")
+end
+
+if creature.health <=0 then
+    print()
+    print("---------------------------------------------------------")
+    print()
+    print(string.format("%s decapitou %s, e do seu sangue brotaram Pégaso, um cavalo alado, e Crisaor, um gigante", creature.name, hero.name))
+    print("Em honra aos deuses que lhe ajudaram, Perseu eleva três altares.")
+    print()
+    print("---------------------------------------------------------")
 end
