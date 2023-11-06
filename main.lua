@@ -17,9 +17,9 @@ local creature = medusa
 local heroActions = perseuActions
 local creatureActions = medusaActions
 
-
 -- Apresenta o monstro
 utils.printCreature(creature)
+utils.printHero(hero)
 
 -- Ações
 heroActions.build()

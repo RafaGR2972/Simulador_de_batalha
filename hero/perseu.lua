@@ -5,7 +5,7 @@ perseu.description = "Herói conhecido por sua coragem e habilidades excepcionai
 perseu.maxHealth = 10
 perseu.health = 10
 perseu.attack = 4
-perseu.defense = 3
+perseu.defense = 4
 perseu.speed = 4
 perseu.item = {"Elmo", "Sandálias aladas", "Escudo"}
 

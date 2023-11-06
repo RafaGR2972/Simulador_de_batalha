@@ -1,7 +1,9 @@
+local hero = require("Lua_Projects.Simulador_de_batalha.hero.perseu")
+
 local utils = {}
 
 ---
---- Habilita o modo UTF8 no terminal.
+--- Habilita o modo UTF8 no terminal e limpa
 ---
 function utils.enableUtf8()
     os.execute("chcp 65001")
@@ -26,9 +28,9 @@ function utils.printHeader()
                    ⚔ SIMULADOR DE BATALHA ⚔
 
 =======================================================================
-
-            Oh, herói, empunhe a sua espada e se prepare para a batalha!                   
 ]])
+   print(string.format("-----Oh, %s, empunhe a sua espada e se prepare para a batalha!-----", hero.name)) 
+   print()               
 end
 
 ---
@@ -45,7 +47,7 @@ function utils.getProgressBar(attribute)
 end
 
 ---
---- Print das informações de uma criatura
+--- Print das informações da criatura
 ---
 function utils.printCreature(creature)
     -- Calculate health rate
@@ -61,6 +63,28 @@ function utils.printCreature(creature)
     print("|    Defesa:           " .. utils.getProgressBar(creature.defense))
     print("|    Vida:             " .. utils.getProgressBar(healthRate))
     print("|    Velocidade:       " .. utils.getProgressBar(creature.speed))
+    print("|")
+end
+
+---
+--- Print das informações de do herói
+---
+function utils.printHero(hero)
+    -- Calculate health rate
+    local healthRate = math.floor((hero.health / hero.maxHealth) * 10)
+
+    -- Cartão
+    print("|======================================================================")
+    print("|")
+    print("| " .. hero.name)
+    print("|")
+    print("| " .. hero.description)
+    print("|")
+    print("| Atributos")
+    print("|    Ataque:           " .. utils.getProgressBar(hero.attack))
+    print("|    Defesa:           " .. utils.getProgressBar(hero.defense))
+    print("|    Vida:             " .. utils.getProgressBar(healthRate))
+    print("|    Velocidade:       " .. utils.getProgressBar(hero.speed))
     print("|")
 end
 

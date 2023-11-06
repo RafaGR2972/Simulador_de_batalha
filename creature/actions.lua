@@ -43,7 +43,7 @@ function actions.build()
         execute = function (heroData, creatureData)
             -- Calcular dano
             local rawDamage = creatureData.attack - math.random() * heroData.defense
-            local damage = math.max(1, math.ceil(rawDamage * 0.3))
+            local damage = math.max(1, math.ceil(rawDamage * 0.2))
 
             -- Aplicar o dano 
             heroData.health = heroData.health - damage

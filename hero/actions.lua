@@ -15,11 +15,15 @@ function actions.build()
         requirement = nil,
         execute = function (heroData, creatureData)
             -- Escolha do item
-            print("Qual item vai usar? Digite 1 para elmo, 2 para sandálias aladas ou 3 para escudo: ")
+            print("Qual item vai usar? 1 para elmo, 2 para sandálias aladas ou 3 para escudo: ")
             local item = io.read("*n")
             -- Efeito do item escolhido
             if heroData.item[1] then
-                heroData.health = heroData.health + 5
+                heroData.attack = heroData.attack + 4
+            elseif heroData.item[2] then
+                heroData.speed = heroData.speed + 3
+            elseif heroData.item[3] then
+                heroData.defense = heroData.defense + 4
             end
             return heroData.item[item]        
         end
