@@ -27,8 +27,7 @@ function utils.printHeader()
 
 =======================================================================
 
-            Oh, herói, empunhe a sua espada e se prepare para lutar!
-                        
+            Oh, herói, empunhe a sua espada e se prepare para a batalha!                   
 ]])
 end
 
