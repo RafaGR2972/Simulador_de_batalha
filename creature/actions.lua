@@ -1,6 +1,7 @@
 local utils = require "Lua_Projects.Simulador_de_batalha.utils"
 
 local actions = {}
+
 actions.list = {}
 
 ---
@@ -36,14 +37,14 @@ function actions.build()
         end
     }
     
-    -- Ataque com a cauda
+    -- Atacar com a cauda
     local tailAttack = {
         description = "Atacar com a cauda.",
         requirement = nil,
         execute = function (heroData, creatureData)
             -- Calcular dano
             local rawDamage = creatureData.attack - math.random() * heroData.defense
-            local damage = math.max(1, math.ceil(rawDamage * 0.2))
+            local damage = math.max(1, math.ceil(rawDamage * 0.3))
 
             -- Aplicar o dano 
             heroData.health = heroData.health - damage
@@ -56,9 +57,20 @@ function actions.build()
         end
     }
 
+    -- Aguardar
+    local waitAction = {
+        description = "Aguardar.",
+        requirement = nil,
+        execute = function (heroData, creatureData)
+            -- Apresentar resultado 
+            print(string.format("%s aguarda para atacar com força no próximo turno.", creatureData.name))
+        end
+    }
+
     -- Populate lista
     actions.list[#actions.list + 1 ] = gazeAttack
     actions.list[#actions.list + 1 ] = tailAttack
+    actions.list[#actions.list + 1 ] = waitAction
 end
 
 

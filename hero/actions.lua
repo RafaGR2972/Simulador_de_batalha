@@ -19,11 +19,11 @@ function actions.build()
             local item = io.read("*n")
             -- Efeito do item escolhido
             if heroData.item[1] then
-                heroData.attack = heroData.attack + 4
+                heroData.attack = heroData.attack + 3
             elseif heroData.item[2] then
                 heroData.speed = heroData.speed + 3
             elseif heroData.item[3] then
-                heroData.defense = heroData.defense + 4
+                heroData.defense = heroData.defense + 3
             end
             return heroData.item[item]        
         end

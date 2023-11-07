@@ -77,7 +77,7 @@ if creature.health <=0 then
     print()
     print("---------------------------------------------------------")
     print()
-    print(string.format("%s decapitou %s, e do seu sangue brotaram Pégaso, um cavalo alado, e Crisaor, um gigante", creature.name, hero.name))
+    print(string.format("%s decapitou %s, e do seu sangue brotaram Pégaso, um cavalo alado, e Crisaor, um gigante", hero.name, creature.name))
     print("Em honra aos deuses que lhe ajudaram, Perseu eleva três altares.")
     print()
     print("---------------------------------------------------------")
